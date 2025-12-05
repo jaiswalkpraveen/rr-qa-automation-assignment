@@ -313,6 +313,165 @@ test('should display movie cards', async ({ page }) => {
 
 ---
 
+## 📝 Logging Implementation
+
+The framework uses a custom `Logger` utility for comprehensive test logging.
+
+### Logger Features
+
+| Feature | Method | Purpose |
+|---------|--------|---------|
+| Test Context | `Logger.setTestContext(name)` | Sets current test name for log prefix |
+| Step Tracking | `Logger.step(action, expected)` | Logs numbered test steps |
+| Browser API | `Logger.browserApi(api, params)` | Documents browser API calls |
+| Assertions | `Logger.assertion(desc, passed)` | Logs assertion results |
+| Test Results | `Logger.testResult(name, status)` | Logs pass/fail status |
+
+### Example Console Output
+
+```
+ℹ️  [INFO] 2025-12-05T19:24:44.071Z [TC-NAV-001: Page loads with content] - Starting test
+👉 [STEP] 2025-12-05T19:24:44.071Z - Step 1: Navigate to TMDB Discover page
+   ↳ Expected: Page loads successfully
+🔍 [DEBUG] 2025-12-05T19:24:44.071Z - Browser API: page.goto() with https://tmdb-discover.surge.sh
+✅ [SUCCESS] 2025-12-05T19:24:45.436Z - Page loaded successfully
+👉 [STEP] 2025-12-05T19:24:47.440Z - Step 2: Verify content is loaded
+🔍 [DEBUG] 2025-12-05T19:24:47.440Z - Browser API: hasContent()
+✅ [SUCCESS] 2025-12-05T19:24:47.442Z - Assertion PASSED: Page has content
+✅ [SUCCESS] 2025-12-05T19:24:47.443Z - Test PASSED: TC-NAV-001 (9234ms)
+```
+
+### Usage in Tests
+
+```typescript
+import { Logger } from '../../utils/logger';
+
+test.beforeEach(async ({ page }, testInfo) => {
+    Logger.setTestContext(testInfo.title);
+    Logger.step('Navigate to page', 'Page loads successfully');
+    Logger.browserApi('page.goto()', BASE_URL);
+    await page.goto(BASE_URL);
+    Logger.success('Page loaded');
+});
+
+test('example test', async ({ page }) => {
+    Logger.step('Click button', 'Action executes');
+    Logger.browserApi('click()', 'button#submit');
+    await page.click('button#submit');
+    
+    Logger.assertion('Button was clicked', true);
+});
+```
+
+---
+
+## 🌐 Browser APIs Usage
+
+### Navigation APIs
+
+```typescript
+// Page navigation
+await page.goto(url);
+await page.waitForLoadState('networkidle');
+await page.waitForLoadState('domcontentloaded');
+```
+
+### Locator APIs
+
+```typescript
+// Element location strategies
+page.locator('text=Movie');                    // Text-based
+page.locator('input[placeholder*="Search"]');  // Attribute-based
+page.locator('[aria-label*="Next"]');          // ARIA-based
+page.locator('a').filter({ hasText: /regex/i }); // Filter with regex
+locator.first();                               // First match
+locator.nth(index);                            // Nth match
+```
+
+### Action APIs
+
+```typescript
+// User interactions
+await element.click();
+await input.fill('text');
+await input.press('Enter');
+await input.clear();
+await input.inputValue();
+```
+
+### Evaluation APIs
+
+```typescript
+// Execute JavaScript in browser context
+await page.evaluate(() => window.scrollY);
+await page.evaluate(() => window.scrollTo(0, 500));
+await page.evaluate(() => document.querySelector('.class'));
+```
+
+### Assertion APIs
+
+```typescript
+// Visibility and state
+await element.isVisible();
+await locator.count();
+await element.getAttribute('class');
+await locator.allTextContents();
+```
+
+---
+
+## 📊 Reporting & Attachments
+
+### Configured Reporters
+
+| Reporter | Output | Purpose |
+|----------|--------|---------|
+| **List** | Console | Real-time test progress |
+| **HTML** | `playwright-report/` | Interactive visual report |
+| **JSON** | `test-results/results.json` | Machine-readable results |
+| **JUnit** | `test-results/junit.xml` | CI/CD integration |
+
+### Automatic Attachments
+
+```typescript
+test.afterEach(async ({ page }, testInfo) => {
+    if (testInfo.status !== 'passed') {
+        // Capture and attach screenshot on failure
+        const screenshot = await page.screenshot({ fullPage: true });
+        await testInfo.attach('failure-screenshot', { 
+            body: screenshot, 
+            contentType: 'image/png' 
+        });
+    }
+});
+```
+
+### Artifact Configuration
+
+```typescript
+// playwright.config.ts
+use: {
+    screenshot: 'only-on-failure',     // Screenshots on failure
+    video: 'retain-on-failure',        // Videos on failure
+    trace: 'on-first-retry',           // Traces on retry
+}
+```
+
+### View Reports
+
+```bash
+# Open interactive HTML report
+npx playwright show-report
+
+# View JSON results
+cat test-results/results.json | jq .
+
+# JUnit results for CI
+cat test-results/junit.xml
+```
+
+---
+
 ## 🐛 Defects Found
 
 During test automation development, the following observations were made:

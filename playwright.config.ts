@@ -18,10 +18,12 @@ export default defineConfig({
   // Workers
   workers: process.env.CI ? 2 : undefined,
 
-  // Reporters
+  // Reporters - Console and HTML reports
   reporter: [
-    ['html', { outputFolder: 'playwright-report', open: 'never' }],
-    ['list'],
+    ['list'],                                                           // Console output
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],     // HTML report
+    ['json', { outputFile: 'test-results/results.json' }],              // JSON for CI/tooling
+    ['junit', { outputFile: 'test-results/junit.xml' }],                // JUnit for CI integration
   ],
 
   use: {

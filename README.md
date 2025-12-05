@@ -4,6 +4,8 @@ Playwright test automation framework for the TMDB Discover movie website.
 
 **Target URL:** https://tmdb-discover.surge.sh
 
+📘 **Documentation:** [Testing Strategy](TESTING_STRATEGY.md) | [Test Cases](TEST_CASES.md)
+
 ---
 
 ## 📋 Test Coverage

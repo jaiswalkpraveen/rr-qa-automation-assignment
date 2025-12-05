@@ -1,0 +1,181 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Discover" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e7]: Discover
+      - navigation [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10] [cursor=pointer]:
+            - link "Popular" [ref=e11]:
+              - /url: /popular
+          - listitem [ref=e12] [cursor=pointer]:
+            - link "Trend" [ref=e13]:
+              - /url: /trend
+          - listitem [ref=e14] [cursor=pointer]:
+            - link "Newest" [ref=e15]:
+              - /url: /new
+          - listitem [ref=e16] [cursor=pointer]:
+            - link "Top rated" [ref=e17]:
+              - /url: /top
+      - generic [ref=e18]:
+        - img "Search Icon" [ref=e19]
+        - textbox "SEARCH" [ref=e20]
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - img "Movie Poster" [ref=e25]
+          - paragraph [ref=e26]: Zootopia 2
+          - paragraph [ref=e27]: Animation, 2025
+        - generic [ref=e28]:
+          - img "Movie Poster" [ref=e29]
+          - paragraph [ref=e30]: "TRON: Ares"
+          - paragraph [ref=e31]: Science Fiction, 2025
+        - generic [ref=e32]:
+          - img "Movie Poster" [ref=e33]
+          - paragraph [ref=e34]: Troll 2
+          - paragraph [ref=e35]: Action, 2025
+        - generic [ref=e36]:
+          - img "Movie Poster" [ref=e37]
+          - paragraph [ref=e38]: "Kantara - A Legend: Chapter 1"
+          - paragraph [ref=e39]: Action, 2025
+        - generic [ref=e40]:
+          - img "Movie Poster" [ref=e41]
+          - paragraph [ref=e42]: Dracula
+          - paragraph [ref=e43]: Horror, 2025
+        - generic [ref=e44]:
+          - img "Movie Poster" [ref=e45]
+          - paragraph [ref=e46]: High Forces
+          - paragraph [ref=e47]: Action, 2024
+        - generic [ref=e48]:
+          - img "Movie Poster" [ref=e49]
+          - paragraph [ref=e50]: Wildcat
+          - paragraph [ref=e51]: Action, 2025
+        - generic [ref=e52]:
+          - img "Movie Poster" [ref=e53]
+          - paragraph [ref=e54]: The Shadow's Edge
+          - paragraph [ref=e55]: Action, 2025
+        - generic [ref=e56]:
+          - img "Movie Poster" [ref=e57]
+          - paragraph [ref=e58]: Bureau 749
+          - paragraph [ref=e59]: Action, 2024
+        - generic [ref=e60]:
+          - img "Movie Poster" [ref=e61]
+          - paragraph [ref=e62]: "Predator: Badlands"
+          - paragraph [ref=e63]: Action, 2025
+        - generic [ref=e64]:
+          - img "Movie Poster" [ref=e65]
+          - paragraph [ref=e66]: Altered
+          - paragraph [ref=e67]: Science Fiction, 2025
+        - generic [ref=e68]:
+          - img "Movie Poster" [ref=e69]
+          - paragraph [ref=e70]: Border Hunters
+          - paragraph [ref=e71]: Action, 2025
+        - generic [ref=e72]:
+          - img "Movie Poster" [ref=e73]
+          - paragraph [ref=e74]: War of the Worlds
+          - paragraph [ref=e75]: Science Fiction, 2025
+        - generic [ref=e76]:
+          - img "Movie Poster" [ref=e77]
+          - paragraph [ref=e78]: "Wicked: For Good"
+          - paragraph [ref=e79]: Fantasy, 2025
+        - generic [ref=e80]:
+          - img "Movie Poster" [ref=e81]
+          - paragraph [ref=e82]: "First Squad: The Moment of Truth"
+          - paragraph [ref=e83]: Fantasy, 2009
+        - generic [ref=e84]:
+          - img "Movie Poster" [ref=e85]
+          - paragraph [ref=e86]: The Family Plan 2
+          - paragraph [ref=e87]: Action, 2025
+        - generic [ref=e88]:
+          - img "Movie Poster" [ref=e89]
+          - paragraph [ref=e90]: Frankenstein
+          - paragraph [ref=e91]: Drama, 2025
+        - generic [ref=e92]:
+          - img "Movie Poster" [ref=e93]
+          - paragraph [ref=e94]: Five Nights at Freddy's 2
+          - paragraph [ref=e95]: Horror, 2025
+        - generic [ref=e96]:
+          - img "Movie Poster" [ref=e97]
+          - paragraph [ref=e98]: She Rides Shotgun
+          - paragraph [ref=e99]: Action, 2025
+        - generic [ref=e100]:
+          - img "Movie Poster" [ref=e101]
+          - paragraph [ref=e102]: Zootopia
+          - paragraph [ref=e103]: Animation, 2016
+      - list [ref=e105]:
+        - listitem [ref=e106]:
+          - button "Previous page" [disabled] [ref=e107]: Previous
+        - listitem [ref=e108]:
+          - button "Page 1 is your current page" [ref=e109]: "1"
+        - listitem [ref=e110]:
+          - button "Page 2" [ref=e111]: "2"
+        - listitem [ref=e112]:
+          - button "Page 3" [ref=e113]: "3"
+        - listitem [ref=e114]:
+          - button "Page 4" [ref=e115]: "4"
+        - listitem [ref=e116]:
+          - button "..." [ref=e117]
+        - listitem [ref=e118]:
+          - button "Page 54030" [ref=e119]: "54030"
+        - listitem [ref=e120]:
+          - button "Page 54031" [ref=e121]: "54031"
+        - listitem [ref=e122]:
+          - button "Page 54032" [ref=e123]: "54032"
+        - listitem [ref=e124]:
+          - button "Next page" [ref=e125]: Next
+  - complementary [ref=e126]:
+    - paragraph [ref=e127]: DISCOVER OPTIONS
+    - generic [ref=e128]:
+      - paragraph [ref=e129]: Type
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]: Movie
+          - textbox [ref=e137]
+        - img [ref=e141]
+      - paragraph [ref=e143]: Genre
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]: Select...
+          - textbox [ref=e151]
+        - img [ref=e155]
+      - paragraph [ref=e157]: Year
+      - generic [ref=e158]:
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - generic [ref=e163]: "1900"
+            - textbox [ref=e166]
+          - img [ref=e170]
+        - generic [ref=e172]: "-"
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - generic [ref=e177]: "2024"
+            - textbox [ref=e180]
+          - img [ref=e184]
+      - paragraph [ref=e186]: Ratings
+      - radiogroup [ref=e187]:
+        - listitem [ref=e188] [cursor=pointer]:
+          - radio "★ ★" [ref=e189]:
+            - generic [ref=e190]: ★
+            - generic [ref=e191]: ★
+        - listitem [ref=e192] [cursor=pointer]:
+          - radio "★ ★" [ref=e193]:
+            - generic [ref=e194]: ★
+            - generic [ref=e195]: ★
+        - listitem [ref=e196] [cursor=pointer]:
+          - radio "★ ★" [ref=e197]:
+            - generic [ref=e198]: ★
+            - generic [ref=e199]: ★
+        - listitem [ref=e200] [cursor=pointer]:
+          - radio "★ ★" [ref=e201]:
+            - generic [ref=e202]: ★
+            - generic [ref=e203]: ★
+        - listitem [ref=e204] [cursor=pointer]:
+          - radio "★ ★" [ref=e205]:
+            - generic [ref=e206]: ★
+            - generic [ref=e207]: ★
+      - text: "& up"
+```
