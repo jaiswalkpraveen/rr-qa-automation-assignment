@@ -30,7 +30,7 @@ Playwright test automation framework for the TMDB Discover movie website.
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/jaiswalkpraveen/rr-qa-automation-assignment.git
 cd rr-qa-automation-assignment
 
 # Install dependencies
@@ -42,20 +42,38 @@ npx playwright install chromium
 
 ---
 
-## ▶️ Running Tests
+## ▶️ How to Run Tests
+
+### Running Tests
 
 ```bash
 # Run all tests
-npx playwright test --project=chromium
+npm test
 
-# Run with browser visible
-npx playwright test --project=chromium --headed
+# Run with visible browser
+npm run test:headed
 
 # Run specific test file
 npx playwright test tests/tmdb/discover-navigation.spec.ts
 
-# Run with verbose output
-npx playwright test --project=chromium --reporter=list
+# Run in CI mode (with retries)
+npm run test:ci
+
+# Run with Playwright UI
+npm run test:ui
+```
+
+### View Reports
+
+```bash
+# Open HTML report
+npx playwright show-report
+
+# View JSON results
+cat test-results/results.json | jq .
+
+# JUnit results for CI
+cat test-results/junit.xml
 ```
 
 ---
@@ -87,16 +105,7 @@ rr-qa-automation-assignment/
 
 ---
 
-## 📊 View Reports
-
-```bash
-# Open HTML report after test run
-npx playwright show-report
-```
-
----
-
-## 🔄 CI/CD (GitHub Actions)
+##  CI/CD (GitHub Actions)
 
 Tests run automatically on push to `main`/`master` and on pull requests.
 
